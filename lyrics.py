@@ -2,6 +2,7 @@ import configparser
 import requests
 import re 
 from spellCheck import bannedWords
+from quotes import JeanGrey
 from bs4 import BeautifulSoup
 
 def getAccessToken():
@@ -50,16 +51,13 @@ def scrapeLyricText(name):
 
         lyrics_div = soup.find(class_="lyrics")
         anchor_tags = lyrics_div.find_all('a')
-        current_lyrics = []
+        current_lyrics = JeanGrey
         for anchor in anchor_tags:
+            print(anchor.text)
             if len(anchor.text) > 0 and anchor.text[0] != "[":
                 # loop through key value pairs to replace banned words with something less explicit 
                 for key, value in bannedWords.items():
                     text = anchor.text.replace(key.lower(),value)
-                    print(key,value)
-   
-                # text = anchor.text.replace("fuck"," f*ck ")
-                #text = anchor.text.replace("shit"," sh*t ")
                 current_lyrics.append(text)
         song_lyrics.append(current_lyrics)
     return song_lyrics

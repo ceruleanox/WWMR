@@ -1,60 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    font-size: 24px;
+    color: #FFFFFF;
 }
-
-section {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    padding: 100px; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #161616;
-}
-
-section .circle {
-    position: absolute;
-/*
-    width: 550px;
-    height: 550px;
-    border: 20px solid black;
-    background: red;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-*/
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #e51e2a;
-    clip-path: circle(70% at right -20%); 
-    z-index: 2;
-}
-
-section .circle .rect1,
-section .circle .rect2 {
-  width: 570px;
-  height: 425px;
-  background-color: red;
-  z-index: 1;
-}
-
-section .circle .rect1 {
-  transform: translate(-15px, 60px) rotate(50deg);
-}
-
-section .circle .rect2 {
-  transform: translate(-10px, 40px) rotate(140deg);
-}
-
 
 header {
     position: absolute;
@@ -69,9 +22,77 @@ header {
 
 header .logo {
     position: relative;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 50px;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
-.content {
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #181818;
+}
+
+
+.row {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row .col50 {
+    position: relative;
+    width: 48%;
+}
+
+.row .col50 .imgBox {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*
+section .circle {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #E51E2A;
+    
+    clip-path: circle(70% at right -20%); 
+    z-index: -3;
+}
+*/
+
+/*
+section .circle .rect1,
+section .circle .rect2 {
+  width: 570px;
+  height: 425px;
+  background-color: #000000;
+  z-index: -2;
+}
+
+section .circle .rect1 {
+  transform: translate(-15px, 60px) rotate(50deg);
+}
+
+section .circle .rect2 {
+  transform: translate(-10px, 40px) rotate(140deg);
+}
+*/
+section .content {
     position: relative;
     display: flex;
     width: 100%;
@@ -79,22 +100,38 @@ header .logo {
     align-items: center;
 }
 
-.content .textBox {
+section .content .textBox {
     position: relative;
-    font-size: 3em;
+    max-width: 650px;
+    margin-right: 20px;
+    color: #FFFFFF;
+}
+
+section .content .textBox h2 {
     margin-bottom: 10px;
     line-height: 1.5em;
+    font-size: 3em;
     font-weight: 700;
-    color: #FFF
+    color: #E51E2A;
+}
 
+#search {
+    width: 350px;
+    color: #000000;
+    font-size: 18px;
 }
 
 #submit {
-    color: white;
-    background-color: #AAA;
-    padding: 5px 20px;
-    border-radius: 5px;
+    display: inline-block;
     margin-top: 20px;
+    padding: 8px 20px;
+    background: #E51E2A;;
+    color: #FFFFFF;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
 }
 
 #lyrics {
@@ -102,4 +139,29 @@ header .logo {
     margin: 20px;
     font-family: 'Poppins', sans-serif;
 
+}
+
+/* swiper functionailty from swiper.js */
+
+.swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.content .xmen-characters {
+    width: 700px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content .xmen-characters img {
+    max-width: 300px;
 }

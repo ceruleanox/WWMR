@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>What Would Marvel Rap?</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/style.css')}}">
+        <link rel="stylesheet" type="text/plain" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    </head>
+    <body>
+        <section>
+            <div class="circle">
+                <!--
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                -->
+            </div>
+            <header>
+                <a href="#" class="logo">What Would Jean Grey Rap?</a>
+            </header>  
+            <div class="row">
+                <div class="col50">
+                    <div class="content">
+                        <div class="textBox">
+                            <h2>Fun With Markov Chains</h2>
+                            <p>What if X-Men character Jean Grey / Phoenix started rapping in the style of your favorite song artist?</p>
+                            <br>
+                            <p>First, you'll find there is no one answer. Second, there's a reason why X-Men characters don't break out into song and dance like a Glee episode. Third, it doesn't hurt to explore the possibilities.</p>
+                            <br>
+                            <p>So look no further! You'll be happy to know that this web application was created to satiate your curiosity.</p>
+                            <br>
+                            <p>Type in the name of a song artist and hit the submit button to generate some rap lyrics that were likely cut from final production. </p>
+                            <p>
+                                <form action="{{url_for('lyricsGenerator')}}" method="post" id="form">
+                                    <input type="text" id="search" name="search" placeholder="Enter song artist name here">
+                                    <input type="submit" id="submit">
+                                </form>
+                            </p>
+
+                            <div id="lyrics">
+                            {% for lyric in lyrics %}
+                                <p>{{lyric}}</p>
+                            {% endfor %}
+                            </div>
+                        </div>
+
+                        <!--
+                        <div class="xmen-characters">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="{{url_for('static', filename='images/char_phoenix.JPG')}}"></div>
+                                    <div class="swiper-slide"><img src="{{url_for('static', filename='images/char_nightcrawler.JPG')}}"></div>
+                                    <div class="swiper-slide"><img src="{{url_for('static', filename='images/char_storm.JPG')}}"></div>
+                                    <div class="swiper-slide"><img src="{{url_for('static', filename='images/char_profX.JPG')}}"></div>
+                                </div>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                </div>
+                <div class="col50">
+                    <br><br><br>
+                    <div class="imgBox">
+                        <img src="{{url_for('static', filename='images/char_phoenix.JPG')}}">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <!--
+            <script src="{{url_for('static', filename='js/swiper.js')}}"></script>
+        -->        
+    </body>
+</html>
